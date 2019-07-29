@@ -1,0 +1,24 @@
+
+<div class="col">
+    <div class="">
+        <div>
+            {% if generated_url %}
+                <div class="row col mt-3 mb-3" style="color:#007bff;"> <span class="mr-4">Shortened url: </span> <a href="{{original_url}}" target="_blank">  {{generated_url}}</a></div>
+            {% endif %}
+            {% for url in url_list %}
+            <div class="border rounded p-2">
+                <div class="row parent-block mt-1">
+                    <div class="col-6 col-md-5 shorter_url" data-url-id="{{url.id}}" data-original-url="{{url.original_url}}" data-shortened-url="{{url.shortened_url}}">
+                        <a href="{{url.original_url}}" target="_blank"><span class="url-link-block">{{url.shortened_url}}</span></a>
+                    </div>
+                    <div class="col-6 col-md-5 view-edit-color">
+                        <span class="edit mr-4 hand-pointer" data-id="1"><i class="fas fa-edit"></i> Edit</span> 
+                        <span class="view hand-pointer mr-4" data-id="1"><i class="fas fa-eye"></i> View <span>Original url</span></span>
+                        <span class="delete mr-4 hand-pointer"><i class="fas fa-trash-alt"></i> Delete</span> 
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
